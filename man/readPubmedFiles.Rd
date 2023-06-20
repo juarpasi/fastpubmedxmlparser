@@ -21,7 +21,7 @@ if (FALSE){
 
 library(fastpubmedxmlparser)
 
-#Suppose you have a PubMed record in the `pubmedData` directory.
+#Suppose you have a PubMed record in the pubmedData directory.
 records <- 'pubmedData/your-pubmed-record.txt' |>
   readPubmedFiles()
 
@@ -30,6 +30,8 @@ records <- 'pubmedData/your-pubmed-record.txt' |>
 # Using the file include in this pkg-----------------------------------------------
 records <- system.file("extdata", "maleCancer.txt", package = "fastpubmedxmlparser") |>
 readPubmedFiles()
+
+records |> str()
 
 
 }

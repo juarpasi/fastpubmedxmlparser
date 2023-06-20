@@ -14,7 +14,7 @@
 #'
 #' library(fastpubmedxmlparser)
 #'
-#' #Suppose you have a PubMed record in the `pubmedData` directory.
+#' #Suppose you have a PubMed record in the pubmedData directory.
 #' records <- 'pubmedData/your-pubmed-record.txt' |>
 #'   readPubmedFiles()
 #'
@@ -24,13 +24,25 @@
 #' records <- system.file("extdata", "maleCancer.txt", package = "fastpubmedxmlparser") |>
 #' readPubmedFiles()
 #'
+#' records |> str()
+#'
 #'
 readPubmedFiles <- function(file_path) {
 
-  file_path |>
+  records <- file_path |>
     xml2::read_xml(encoding = "UTF-8") |>
-    # extract nodes with the tag
+    # extract nodes with the tag PubmedArticle
     xml2::xml_find_all(".//PubmedArticle") |>
     as.character()
 
+  #get ids
+  pmids <- records |>
+    lapply(xml2::read_xml) |>
+    lapply(find_text_for('.//PMID'))
+
+  names(records) <- pmids
+
+  return(records)
+
 }
+
