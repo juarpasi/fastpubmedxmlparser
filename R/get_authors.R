@@ -26,13 +26,4 @@ get_authors <- function(doc) {
   return(df)
 }
 
-# Helpers -----------------------------------------------------------------
 
-find_text_for <- \(xpath)\(xml_doc) xml2::xml_find_first(xml_doc, xpath)|> xml2::xml_text()
-#note the reason why I use this with separated its beacuse I can pass within the `apply`
-
-#add pmid to a dataframe
-add_pmid <- function(df, id) cbind(df, PMID = id)
-
-#list of dataframes 2 one dataframe.
-pubmed_list2df <- function(df) Map(add_pmid, df, id = names(df)) |> Reduce(f = rbind)
