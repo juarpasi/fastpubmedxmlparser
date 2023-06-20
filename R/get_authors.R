@@ -1,3 +1,15 @@
+#' Extract the author data from a unique PubMed xml record character
+#'
+#' @param doc str. An PubMed xml record of one record.
+#'
+#' @return df. Author data included: laste name, fore name, initial and affiliation
+#' @export
+#'
+#' @examples
+#'
+#' system.file("extdata", "one_record_male_cancer01.txt", package = "fastpubmedxmlparser") |>
+#'   readPubmedFiles() |>
+#'   get_authors()
 
 get_authors <- function(doc) {
 
@@ -25,5 +37,3 @@ get_authors <- function(doc) {
 
   return(df)
 }
-
-
