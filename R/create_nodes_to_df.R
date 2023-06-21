@@ -1,12 +1,12 @@
 #' Dynamic generation of XML nodes to dataframe Functions
 #'
 #' @description
-#' `create_node_to_df` is a higher-order function, which partially apply the parameters.
+#' `create_nodes_to_df` is a higher-order function, which partially apply the parameters.
 #'
 #' @param xpath chr. A path of the nodes in which search
 #' @param attribs chr. The attributes that could be available in the `xpath`
 #'
-#' @return fun. For applications see a `get_nodedf_*` function.
+#' @return fun. For applications see a `get_nodesdf_*` function.
 #' @export
 #'
 #' @examples
@@ -28,7 +28,7 @@
 #'
 #' # Create an uncurried function for clarity
 #' nodeList2Df <- function(doc, xpath, attribs) {
-#'   f <- create_node_to_df(xpath, attribs)(doc)
+#'   f <- create_nodes_to_df(xpath, attribs)(doc)
 #'   return(f)
 #' }
 #'
@@ -38,9 +38,9 @@
 #'
 #' # get_nodedf_* ----------------------------------------------------------------------
 #'
-#' # This function is used to generate the `get_nodedf_*` functions
-#' get_nodedf_mesh_description <- create_node_to_df('.//MedlineCitation//MeshHeadingList//DescriptorName', c('MajorTopicYN','UI'))
-create_node_to_df <- function(xpath, attribs) {
+#' # This function is used to generate the `get_nodesdf_*` functions
+#' get_nodedf_mesh_description <- create_nodes_to_df('.//MedlineCitation//MeshHeadingList//DescriptorName', c('MajorTopicYN','UI'))
+create_nodes_to_df <- function(xpath, attribs) {
 
   function(doc){
     #get nodes
