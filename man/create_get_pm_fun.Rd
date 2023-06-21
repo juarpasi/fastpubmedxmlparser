@@ -7,13 +7,15 @@
 create_get_pm_fun(f)
 }
 \arguments{
-\item{f}{fun. A function that take one chr}
+\item{f}{fun. This function cannot take a chr vector of length 1.}
 }
 \value{
-fun. A function that take a chr vector with length of one or more and apply the function \code{f}.
+fun. A function that take a chr vector (length >= 1) and apply the function \code{f}.
 }
 \description{
-Make \code{get_pm} function
+The functions \verb{get_nodesdf_*} and \code{get_nodedf_} work with a chr vector of length 1.
+\code{create_get_pm_fun} can make that those functions can operate with vector of length > 1.
+The \code{pm} means PubMed.
 }
 \examples{
 get_pm_authors <- create_get_pm_fun(get_authors)

@@ -1,8 +1,13 @@
 #' Make `get_pm` function
 #'
-#' @param f fun. A function that take one chr
+#' @description
+#' The functions `get_nodesdf_*` and `get_nodedf_` work with a chr vector of length 1.
+#' `create_get_pm_fun` can make that those functions can operate with vector of length > 1.
+#' The `pm` means PubMed.
 #'
-#' @return fun. A function that take a chr vector with length of one or more and apply the function `f`.
+#' @param f fun. This function cannot take a chr vector of length 1.
+#'
+#' @return fun. A function that take a chr vector (length >= 1) and apply the function `f`.
 #'
 #' @export
 #'

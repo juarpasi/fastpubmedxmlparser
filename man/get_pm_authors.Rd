@@ -3,11 +3,41 @@
 \name{get_pm_authors}
 \alias{get_pm_authors}
 \alias{get_pm_abstract}
+\alias{get_pm_keywords}
+\alias{get_pm_mesh_des}
+\alias{get_pm_mesh_qua}
+\alias{get_pm_paper_ids}
+\alias{get_pm_pub_type}
+\alias{get_pm_journal}
+\alias{get_pm_country}
+\alias{get_pm_language}
+\alias{get_pm_title}
+\alias{get_pm_year}
 \title{Extract metadata from a record list}
 \usage{
 get_pm_authors(str_list)
 
 get_pm_abstract(str_list)
+
+get_pm_keywords(str_list)
+
+get_pm_mesh_des(str_list)
+
+get_pm_mesh_qua(str_list)
+
+get_pm_paper_ids(str_list)
+
+get_pm_pub_type(str_list)
+
+get_pm_journal(str_list)
+
+get_pm_country(str_list)
+
+get_pm_language(str_list)
+
+get_pm_title(str_list)
+
+get_pm_year(str_list)
 }
 \arguments{
 \item{str_list}{chr. A chr vector with multiple vect. Usually extracted from \code{readPubmedFiles} function.}

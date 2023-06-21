@@ -7,9 +7,10 @@
 #'
 #' @examples
 #' system.file("extdata", "pubmed_male_cancer_10.txt", package = "fastpubmedxmlparser") |>
-#'   get_pm_authors() |>
+#'   readPubmedFiles() |>
+#'   get_pm_keywords() |>
 #'   pubmed_list2df()
-pubmed_list2df <- function(dfs) {Map(add_pmid, df = dfs, id = names(df)) |> Reduce(f = \(x, y) merge(x, y, all = T))}
+pubmed_list2df <- function(dfs) {Map(add_pmid, df = dfs, id = names(dfs)) |> Reduce(f = \(x, y) merge(x, y, all = T))}
 
 # Helpers -----------------------------------------------------------------
 
