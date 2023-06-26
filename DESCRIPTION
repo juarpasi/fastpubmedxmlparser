@@ -1,14 +1,20 @@
 Package: fastpubmedxmlparser
-Title: What the Package Does (One Line, Title Case)
+Title: Fast PubMed Metadata Extraction
 Version: 0.0.0.9000
 Authors@R: 
-    person("Pablo Simón", "Juárez Arellano", , "juarpasi97@gmail.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: A group of functions for parsing XML PubMed Records.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("Pablo Simón", "Juárez Arellano", "juarpasi97@gmail.com", role = c("aut", "cre"))
+Description: Get PubMed metadata from records in XML format.
+    It handle XML files and get the metadata into structured dataframes for
+    easy analysis and manipulation. Built on the robust and
+    high-performance 'xml2' library.
+#> BugReports: https://github.com/.../issues
+#> URL: https://github.com/.../...
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
 Imports: 
     xml2
+Depends: 
+    R (>= 2.10)
+LazyData: true
