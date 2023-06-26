@@ -15,4 +15,4 @@ pubmed_list2df <- function(dfs) {Map(add_pmid, df = dfs, id = names(dfs)) |> Red
 # Helpers -----------------------------------------------------------------
 
 #add pmid to a dataframe
-add_pmid <- function(df, id) cbind(df, PMID = id)
+add_pmid <- function(df, id) cbind(PMID = id, df)
