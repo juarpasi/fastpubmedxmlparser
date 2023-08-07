@@ -1,8 +1,14 @@
 #' Extract metadata from a record list
 #'
-#' @param str_list chr. A chr vector with multiple vect. Usually extracted from `readPubmedFiles` function.
+#' @param str_list chr. A character vector with multiple elements. Usually
+#'   extracted from the [readPubmedFiles] function.
 #'
-#' @return A list of the same length of str_list paragram
+#' @return A list of the same length of str_list parameter. Each element of the
+#'   list is a dataframe. The first column will contain the text of the nodeset
+#'   in the xml record. The subsequent columns names will be named with the
+#'   attributes of the nodeset, and the rows will contain the attribute value.
+#'   If no nodeset was found for a record, a NULL value will be return. Each
+#'   element is named with the PMID of the record
 #'
 #' @export
 #'

@@ -2,21 +2,23 @@
 % Please edit documentation in R/pubmed_list2df.R
 \name{pubmed_list2df}
 \alias{pubmed_list2df}
-\title{Make a unique dataframe from a list of \code{dataframes} of the same PubMed data}
+\title{Create a single dataframe from a list of dataframes containing the same PubMed data}
 \usage{
 pubmed_list2df(dfs)
 }
 \arguments{
-\item{dfs}{ls. A list, typicall return by one \verb{get_pm*} function.}
+\item{dfs}{list. A list of dataframes, typicall return by one of the \verb{get_pm*} functions.}
 }
 \value{
-df. A table with the same columns
+df. A dataframe that combines the columns from the input list of dataframes.
 }
 \description{
-Make a unique dataframe from a list of \code{dataframes} of the same PubMed data
+Create a single dataframe from a list of dataframes containing the same PubMed data
 }
 \examples{
 system.file("extdata", "pubmed_male_cancer_10.txt", package = "fastpubmedxmlparser") |>
-  get_pm_authors() |>
+  readPubmedFiles() |>
+  get_pm_keywords() |>
   pubmed_list2df()
+
 }

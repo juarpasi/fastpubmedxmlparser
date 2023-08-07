@@ -1,5 +1,7 @@
 #' Make `get_pm` function
 #'
+#' @noRd
+#'
 #' @description
 #' The functions `get_nodesdf_*` and `get_nodedf_` work with a chr vector of length 1.
 #' `create_get_pm_fun` can make that those functions can operate with vector of length > 1.

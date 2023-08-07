@@ -1,5 +1,7 @@
 #' Extract the author data from a unique PubMed xml record character
 #'
+#' @noRd
+#'
 #' @param doc str. An PubMed xml record of one record.
 #'
 #' @return df. Author data included: laste name, fore name, initial and affiliation

@@ -2,18 +2,19 @@
 % Please edit documentation in R/readPubmedFiles.R
 \name{readPubmedFiles}
 \alias{readPubmedFiles}
-\title{Read a xml pubmed file into chr strings}
+\title{#' Read a XML PubMed file into character strings}
 \usage{
 readPubmedFiles(file_path)
 }
 \arguments{
-\item{file_path}{chr vect. The path for the PubMed record.}
+\item{file_path}{chr vector. The path for the PubMed record file.}
 }
 \value{
-chr vect. With each record as a character vector
+A character vector, with each PubMed record represented as a string.
 }
 \description{
-Split the xml file into strings, according to the number of PubmedArticles that the XML file contains
+This function reads an XML PubMed file and split it into strings
+by the PubmedArticle tag.
 }
 \examples{
 # From local file ----------------------------------------------------------------
@@ -29,9 +30,11 @@ records <- 'pubmedData/your-pubmed-record.txt' |>
 
 # Using the file include in this pkg-----------------------------------------------
 records <- system.file("extdata", "maleCancer.txt", package = "fastpubmedxmlparser") |>
-readPubmedFiles()
+readPubmedFiles() |>
+str()
 
-records |> str()
-
-
+}
+\seealso{
+\link{get_pm_authors}, \link{get_pm_abstract}, and all the \verb{get_pm_*}
+functions for futher analysis.
 }

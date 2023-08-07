@@ -1,4 +1,7 @@
 #' Dynamic generation of a single XML node to dataframe Functions
+#'
+#' @noRd
+#'
 #' @description
 #' This function is similar to `create_node_to_df` but it will use the first node.
 #' The returning function, internally calls `xml2::xml_find_first`.

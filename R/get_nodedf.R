@@ -1,5 +1,7 @@
 #' Get a dataframe from a single node for a unique PubMed record.
 #'
+#' @noRd
+#'
 #' @description
 #' The functions `get_nodedf_*` all are derived functions from `create_node_to_df`.
 #'

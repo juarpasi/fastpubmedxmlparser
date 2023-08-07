@@ -1,11 +1,11 @@
-#' Read a xml pubmed file into chr strings
+#' #' Read a XML PubMed file into character strings
 #'
-#' @description
-#' Split the xml file into strings, according to the number of PubmedArticles that the XML file contains
+#' @description This function reads an XML PubMed file and split it into strings
+#' by the PubmedArticle tag.
 #'
-#' @param file_path chr vect. The path for the PubMed record.
+#' @param file_path chr vector. The path for the PubMed record file.
 #'
-#' @return chr vect. With each record as a character vector
+#' @return A character vector, with each PubMed record represented as a string.
 #' @export
 #'
 #' @examples
@@ -22,11 +22,11 @@
 #'
 #' # Using the file include in this pkg-----------------------------------------------
 #' records <- system.file("extdata", "maleCancer.txt", package = "fastpubmedxmlparser") |>
-#' readPubmedFiles()
+#' readPubmedFiles() |>
+#' str()
 #'
-#' records |> str()
-#'
-#'
+#' @seealso [get_pm_authors], [get_pm_abstract], and all the `get_pm_*`
+#' functions for futher analysis.
 readPubmedFiles <- function(file_path) {
 
   records <- file_path |>

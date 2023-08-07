@@ -1,5 +1,7 @@
 #' Extract the abstracts with associated data from one PubMed record
 #'
+#' @noRd
+#'
 #' @param doc str. An PubMed xml record of one record.
 #'
 #' @return df. A table with the text, label and Nlm category

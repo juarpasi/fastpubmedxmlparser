@@ -1,8 +1,8 @@
-#' Make a unique dataframe from a list of `dataframes` of the same PubMed data
+#' Create a single dataframe from a list of dataframes containing the same PubMed data
 #'
-#' @param dfs ls. A list, typicall return by one `get_pm*` function.
+#' @param dfs list. A list of dataframes, typicall return by one of the `get_pm*` functions.
 #'
-#' @return df. A table with the same columns
+#' @return df. A dataframe that combines the columns from the input list of dataframes.
 #' @export
 #'
 #' @examples
@@ -10,9 +10,13 @@
 #'   readPubmedFiles() |>
 #'   get_pm_keywords() |>
 #'   pubmed_list2df()
-pubmed_list2df <- function(dfs) {Map(add_pmid, df = dfs, id = names(dfs)) |> Reduce(f = \(x, y) merge(x, y, all = T))}
+#'
+pubmed_list2df <- function(dfs) {
+  Map(add_pmid, df = dfs, id = names(dfs)) |>
+    Reduce(f = \(x, y) merge(x, y, all = TRUE))
+  }
 
 # Helpers -----------------------------------------------------------------
 
-#add pmid to a dataframe
+#add PMID to a dataframe
 add_pmid <- function(df, id) cbind(PMID = id, df)

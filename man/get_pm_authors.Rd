@@ -40,17 +40,29 @@ get_pm_title(str_list)
 get_pm_year(str_list)
 }
 \arguments{
-\item{str_list}{chr. A chr vector with multiple vect. Usually extracted from \code{readPubmedFiles} function.}
+\item{str_list}{chr. A character vector with multiple elements. Usually
+extracted from the \link{readPubmedFiles} function.}
 }
 \value{
-A list of the same length of str_list paragram
+A list of the same length of str_list parameter. Each element of the
+list is a dataframe. The first column will contain the text of the nodeset
+in the xml record. The subsequent columns names will be named with the
+attributes of the nodeset, and the rows will contain the attribute value.
+If no nodeset was found for a record, a NULL value will be return. Each
+element is named with the PMID of the record
 }
 \description{
 Extract metadata from a record list
 }
 \examples{
 system.file("extdata", "one_record_male_cancer01.txt", package = "fastpubmedxmlparser") |>
+  readPubmedFiles() |>
   get_pm_abstract() |>
-  pubmed_list2df()
+  str()
+
+system.file("extdata", "pubmed_male_cancer_10.txt", package = "fastpubmedxmlparser") |>
+  readPubmedFiles() |>
+  get_pm_pub_type() |>
+  str()
 
 }

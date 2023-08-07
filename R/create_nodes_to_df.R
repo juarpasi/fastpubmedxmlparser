@@ -1,5 +1,7 @@
 #' Dynamic generation of XML nodes to dataframe Functions
 #'
+#' @noRd
+#'
 #' @description
 #' `create_nodes_to_df` is a higher-order function, which partially apply the parameters.
 #'
