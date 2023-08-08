@@ -2,7 +2,7 @@
 % Please edit documentation in R/readPubmedFiles.R
 \name{readPubmedFiles}
 \alias{readPubmedFiles}
-\title{#' Read a XML PubMed file into character strings}
+\title{Read a XML PubMed file into character strings}
 \usage{
 readPubmedFiles(file_path)
 }
