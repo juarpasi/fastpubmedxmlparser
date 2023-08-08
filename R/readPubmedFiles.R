@@ -1,4 +1,4 @@
-#' #' Read a XML PubMed file into character strings
+#' Read a XML PubMed file into character strings
 #'
 #' @description This function reads an XML PubMed file and split it into strings
 #' by the PubmedArticle tag.
